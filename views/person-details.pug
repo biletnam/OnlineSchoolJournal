@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  if teacher || child || parent
+    h1 Person Details:
+    if teacher
+      p Teacher Name: #{teacher.firstName} #{teacher.lastName}
+      p Teacher Date: #{teacher.age}
+      p Subject: #{teacher.subject}
+      p Experience since: #{teacher.startWorkingDate}
+  else
+    h1 There's no such person!
