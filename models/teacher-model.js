@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const AutoIncrement = require('mongoose-sequence')(mongoose)
 
+const GENDERS = ["male", "female", "undefined"]
+
 const TeacherSchema = mongoose.Schema({
   firstName: {
     type: String,
@@ -13,6 +15,10 @@ const TeacherSchema = mongoose.Schema({
   age: {
     type: Number,
     min: 0
+  },
+  gender: {
+    type: String,
+    enum: GENDERS
   },
   subject: {
     type: String,
