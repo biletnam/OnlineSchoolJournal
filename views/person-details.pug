@@ -9,5 +9,12 @@ block content
       p Age: #{teacher.age}
       p Subject: #{teacher.subject}
       p Experience since: #{teacher.startWorkingDate}
+
+    if child
+      p Child Name: #{child.firstName} #{child.lastName}
+      p Gender: #{child.gender}
+      p Age: #{child.age}
+      p Subjects: #{child.subjects}
+      p List of marks: #{child.listOfMarks}
   else
     h1 There's no such person!
