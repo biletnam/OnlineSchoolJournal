@@ -1,0 +1,15 @@
+extends layout
+
+block scripts-content
+  include scripts.js
+
+block content
+  if teachers && teachers.length !=0
+    h1 Teachers:
+    ul
+      each teacher in teachers
+        li 
+          a(href="/teachers/" + teacher._id) #{teacher.firstName} #{teacher.lastName}
+          button.delete-button(forUrl="/teachers/" + teacher.id) Delete
+  else
+    h1 There are no people yet!

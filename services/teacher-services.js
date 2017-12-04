@@ -2,21 +2,22 @@ const fs = require('fs')
 
 const TeacherModel = require('../models/teacher-model')
 
-async function findAll() {
+function findAll() {
   return TeacherModel.find()
 }
 
-async function find(id) {
-  return TeacherModel.findOne({ id })
+function find(id) {
+  return TeacherModel.findById(id)
 }
 
-async function add(teacher) {
+function add(teacher) {
   return TeacherModel.create(teacher)
 }
 
-async function del(id) {
-  return TeacherModel.remove({ id })
+function del(id) {
+  return TeacherModel.findByIdAndRemove(id)
 }
+
 module.exports = {
   findAll,
   find,

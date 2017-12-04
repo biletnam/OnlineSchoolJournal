@@ -13,14 +13,20 @@ router.post('/', async (req, res, next) => {
   res.send('i got it!' + teacher)
 })
 
-// // View a teacher profile by Id
-// // GET /teachers/:id
+// View a list of all teachers
+router.get('/', async (req, res, next) => {
+  const teachers = await TeacherService.findAll()
+  res.render('person-list', {teachers})
+})
+
+// View a teacher profile by Id
+// GET /teachers/:id
 router.get('/:id', async (req, res, next) => {
   const teacher = await TeacherService.find(req.params.id)
   res.render('person-details', {teacher})
 })
 
-// // Remove a teacher
+// Remove a teacher
 router.delete('/:id', async (req, res, next) => {
   await TeacherService.del(req.params.id)
   res.send('teacher removed!')
