@@ -4,12 +4,20 @@ block scripts-content
   include scripts.js
 
 block content
-  if teachers && teachers.length !=0
-    h1 Teachers:
-    ul
-      each teacher in teachers
-        li 
-          a(href="/teachers/" + teacher.id) #{teacher.firstName} #{teacher.lastName}
-          button.delete-button(forUrl="/teachers/" + teacher.id) Delete
-  else
-    h1 There are no teachers yet!
+  .row
+    if teachers && teachers.length !=0
+      h1 Teachers:
+      table.table.table-bordered.table-hover
+        thead.thead-dark
+          tr
+            th Teacher Name
+            th Delete
+        tbody
+          each teacher in teachers
+            tr
+              td
+                a(href="/teachers/" + teacher.id) #{teacher.firstName} #{teacher.lastName}
+              td
+                button.delete-button.btn.btn-danger(forUrl="/teachers/" + teacher.id) Delete
+    else
+      h1 There are no teachers yet!

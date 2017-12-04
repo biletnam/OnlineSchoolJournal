@@ -2,9 +2,14 @@ html
   head
     title Online School Journal
     script(src="https://unpkg.com/axios@0.17.0/dist/axios.min.js")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css")
   
   script
     block scripts-content
 
   body
-    block content
+    .container
+      main
+        .row.justify-content-center
+          .col-12
+            block content

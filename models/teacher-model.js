@@ -23,7 +23,10 @@ const TeacherSchema = mongoose.Schema({
     type: String,
     require: true
   },
-  startWorkingDate: Date
+  startWorkingDate: {
+    type: Date,
+    require: true
+  }
 })
 
 module.exports = mongoose.model('Teacher', TeacherSchema)

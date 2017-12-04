@@ -1,27 +1,78 @@
 extends layout
 
 block content
-  if teacher || child || parent
-    h1 Person Details:
-    if teacher
-      p Teacher Name: #{teacher.firstName} #{teacher.lastName}
-      p Gender: #{teacher.gender}
-      p Age: #{teacher.age}
-      p Subject: #{teacher.subject}
-      p Experience since: #{teacher.startWorkingDate}
+  .row
+    if teacher || child || parent
+      h1 Person Details:
+      if teacher
+        table.table
+          tbody
+            tr
+              td 
+                p.font-weight-bold Teacher Name:
+              td #{teacher.firstName} #{teacher.lastName}
+            tr
+              td 
+                p.font-weight-bold Gender:
+              td #{teacher.gender}
+            tr
+              td
+                p.font-weight-bold Age:
+              td #{teacher.age}
+            tr
+              td 
+                p.font-weight-bold Subject: 
+              td #{teacher.subject}
+            tr
+              td 
+                p.font-weight-bold Experience since:
+              td #{teacher.startWorkingDate}
 
-    if child
-      p Child Name: #{child.firstName} #{child.lastName}
-      p Gender: #{child.gender}
-      p Age: #{child.age}
-      p Subjects: #{child.subjects}
-      p List of marks: #{child.listOfMarks}
-      p Parents: #{child.parents}
+      if child
+        table.table
+          tbody
+            tr
+              td 
+                p.font-weight-bold Child Name:
+              td #{child.firstName} #{child.lastName}
+            tr
+              td 
+                p.font-weight-bold Gender:
+              td #{child.gender}
+            tr
+              td 
+                p.font-weight-bold Age:
+              td #{child.age}
+            tr
+              td 
+                p.font-weight-bold Subjects: 
+              td #{child.subjects}
+            tr
+              td 
+                p.font-weight-bold List of marks
+              td #{child.listOfMarks}
+            tr
+              td 
+                p.font-weight-bold Parents:
+              td #{child.parents}
 
-    if parent
-      p Parent Name: #{parent.firstName} #{parent.lastName}
-      p Gender: #{parent.gender}
-      p Age: #{parent.age}
-      p Children: #{parent.children}
-  else
-    h1 There's no such person!
+      if parent
+        table.table
+          tr
+            td 
+              p.font-weight-bold Parent Name:
+            td #{parent.firstName} #{parent.lastName}
+          tr
+            td 
+              p.font-weight-bold Gender: 
+            td #{parent.gender}
+          tr
+            td 
+              p.font-weight-bold Age:
+            td #{parent.age}
+          tr
+            td 
+              p.font-weight-bold Children:
+            td #{parent.children}
+    else
+      h1 There's no such person!

@@ -4,7 +4,8 @@
   "description": "Online School Journal project for Graduation event (WTM Berlin JS Crush course)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc ava --verbose",
+    "test-watch": "ava --verbose --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,10 @@
     "express": "^4.16.2",
     "mongoose": "^4.13.5",
     "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "nyc": "^11.3.0",
+    "supertest": "^3.0.0"
   }
 }

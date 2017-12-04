@@ -4,12 +4,20 @@ block scripts-content
   include scripts.js
 
 block content
-  if parents && parents.length !=0
-    h1 Parents:
-    ul
-      each parent in parents
-        li 
-          a(href="/parents/" + parent.id) #{parent.firstName} #{parent.lastName}
-          button.delete-button(forUrl="/parents/" + parent.id) Delete
-  else
-    h1 There are no parents yet! 
+  .row
+    if parents && parents.length !=0
+      h1 Parents:
+      table.table.table-bordered.table-hover
+        thead.thead-dark
+          tr
+            th Parent Name
+            th Delete
+        tbody
+          each parent in parents
+            tr 
+              td
+                a(href="/parents/" + parent.id) #{parent.firstName} #{parent.lastName}
+              td
+                button.delete-button.btn.btn-danger(forUrl="/parents/" + parent.id) Delete
+    else
+      h1 There are no parents yet! 
