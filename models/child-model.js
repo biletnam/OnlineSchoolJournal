@@ -27,9 +27,13 @@ const ChildSchema = mongoose.Schema({
       type: String,
       require: true
     },
-    marks: [{
+    mark: {
       type: Number
-    }]
+    },
+    teacher: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Teacher'
+    }
   }]
 })
 

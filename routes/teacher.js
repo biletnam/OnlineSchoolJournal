@@ -34,4 +34,14 @@ router.delete('/:id', async (req, res, next) => {
   res.send('teacher removed!')
 })
 
+
+// Put a marks to child
+// POST /teachers/:id/marks
+router.post('/:id/mark', async (req, res, next) => {
+  const mark = await req.body.mark
+  const childId = await req.body.childId
+  const teacherId = await req.params.id
+  TeacherService.putMark(mark, childId, teacherId)
+  res.send('mark added!')
+})
 module.exports = router
