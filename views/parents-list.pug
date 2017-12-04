@@ -1,0 +1,15 @@
+extends layout
+
+block scripts-content
+  include scripts.js
+
+block content
+  if parents && parents.length !=0
+    h1 Parents:
+    ul
+      each parent in parents
+        li 
+          a(href="/parents/" + parent.id) #{parent.firstName} #{parent.lastName}
+          button.delete-button(forUrl="/parents/" + parent.id) Delete
+  else
+    h1 There are no parents yet! 

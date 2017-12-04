@@ -16,5 +16,11 @@ block content
       p Age: #{child.age}
       p Subjects: #{child.subjects}
       p List of marks: #{child.listOfMarks}
+
+    if parent
+      p Parent Name: #{parent.firstName} #{parent.lastName}
+      p Gender: #{parent.gender}
+      p Age: #{parent.age}
+      p Children: #{parent.children}
   else
     h1 There's no such person!
