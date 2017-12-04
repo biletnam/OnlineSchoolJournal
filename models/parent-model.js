@@ -19,10 +19,10 @@ const ParentSchema = mongoose.Schema({
     type: String,
     enum: GENDERS
   },
-  children: {
+  children: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Child'
-  }
+  }]
 })
 
 module.exports = mongoose.model('Parent', ParentSchema)
