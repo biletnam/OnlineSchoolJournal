@@ -29,10 +29,20 @@ router.get('/:id', async (req, res, next) => {
 })
 
 // Remove a parent
-// DELETE /parent/:id
+// DELETE /parents/:id
 router.delete('/:id', async (req, res, next) => {
   await ParentService.del(req.params.id)
   res.send('parent removed!')
+})
+
+// Add a child
+// POST /parents/:id
+router.post('/:id/child', async (req, res, next) => {
+  const parentId = await req.params.id
+  console.log(parentId)
+  const childId = await req.body.childId
+  console.log(childId)
+  ParentService.addChild(childId, parentId)
 })
 
 module.exports = router

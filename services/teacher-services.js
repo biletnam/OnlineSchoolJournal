@@ -21,7 +21,7 @@ function del(id) {
 
 async function putMark(mark, childId, teacherId) {
   const teacher = await find(teacherId)
-  const subject = await teacher.subject
+  const subject = teacher.subject
   const putMarkTo = await ChildService.find(childId)
   putMarkTo.listOfMarks.addToSet({"subject": subject, "mark": mark, "teacher": teacher})
   const updatedChild = await putMarkTo.save()

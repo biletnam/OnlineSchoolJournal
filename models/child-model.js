@@ -34,7 +34,12 @@ const ChildSchema = mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Teacher'
     }
+  }],
+  parents: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Parent'
   }]
+
 })
 
 module.exports = mongoose.model('Child', ChildSchema)
