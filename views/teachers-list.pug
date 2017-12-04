@@ -11,14 +11,5 @@ block content
         li 
           a(href="/teachers/" + teacher.id) #{teacher.firstName} #{teacher.lastName}
           button.delete-button(forUrl="/teachers/" + teacher.id) Delete
-  
-  if children && children.length !=0
-    h1 Children:
-    ul
-      each child in children
-        li
-          a(href="/children/" + child.id) #{child.firstName} #{child.lastName}
-          button.delete-button(forUrl="/children/" + child.id) Delete
-
   else
-    h1 There are no people yet!
+    h1 There are no teachers yet!

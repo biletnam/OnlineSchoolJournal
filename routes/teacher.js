@@ -17,7 +17,7 @@ router.post('/', async (req, res, next) => {
 // GET /teachers
 router.get('/', async (req, res, next) => {
   const teachers = await TeacherService.findAll()
-  res.render('person-list', {teachers})
+  res.render('teachers-list', {teachers})
 })
 
 // View a teacher profile by Id

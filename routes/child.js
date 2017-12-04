@@ -20,7 +20,7 @@ router.post('/', async (req, res, next) => {
 // GET /children
 router.get('/', async (req, res, next) => {
   const children = await ChildService.findAll()
-  res.render('person-list', {children})
+  res.render('children-list', {children})
 })
 
 // View a child profile by Id
