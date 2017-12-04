@@ -14,6 +14,7 @@ router.post('/', async (req, res, next) => {
 })
 
 // View a list of all teachers
+// GET /teachers
 router.get('/', async (req, res, next) => {
   const teachers = await TeacherService.findAll()
   res.render('person-list', {teachers})
@@ -27,6 +28,7 @@ router.get('/:id', async (req, res, next) => {
 })
 
 // Remove a teacher
+// DELETE /teachers/:id
 router.delete('/:id', async (req, res, next) => {
   await TeacherService.del(req.params.id)
   res.send('teacher removed!')
