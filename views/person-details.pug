@@ -5,7 +5,7 @@ block content
     if teacher || child || parent
       h1 Person Details:
       if teacher
-        table.table
+        table.table.table-bordered.table-hover
           tbody
             tr
               td 
@@ -29,7 +29,7 @@ block content
               td #{teacher.startWorkingDate}
 
       if child
-        table.table
+        table.table.table-bordered.table-hover
           tbody
             tr
               td 
@@ -49,7 +49,7 @@ block content
               td #{child.subjects}
             tr
               td 
-                p.font-weight-bold List of marks
+                p.font-weight-bold List of marks:
               td #{child.listOfMarks}
             tr
               td 
@@ -57,7 +57,7 @@ block content
               td #{child.parents}
 
       if parent
-        table.table
+        table.table.table-bordered.table-hover
           tr
             td 
               p.font-weight-bold Parent Name:

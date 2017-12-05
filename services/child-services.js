@@ -7,7 +7,7 @@ function findAll() {
 }
 
 function find(id) {
-  return ChildModel.findById(id)
+  return ChildModel.findById(id).populate('parents')
 }
 
 function add(child) {

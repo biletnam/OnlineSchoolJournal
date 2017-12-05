@@ -8,7 +8,7 @@ function findAll() {
 }
 
 function find(id) {
-  return ParentModel.findById(id)
+  return ParentModel.findById(id).populate('children', 'firstName')
 }
 
 function add(parent) {
@@ -22,8 +22,9 @@ function del(id) {
 async function addChild(childId, parentId) {
   const parent = await find(parentId)
   const child = await ChildService.find(childId)
-  parent.children.addToSet(child)
-  child.parents.addToSet(parent)
+  parent.children.push(child)
+  console.log(parent.children)
+  child.parents.push(parent)
   await parent.save()
   await child.save()
 }
